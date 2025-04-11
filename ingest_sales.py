@@ -1,5 +1,5 @@
 import sys
-import logging
+import logging,os
 from snowflake.snowpark import Session
 
 # Set up logging

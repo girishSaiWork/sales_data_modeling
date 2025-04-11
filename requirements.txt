@@ -1,0 +1,7 @@
+snowflake-connector-python
+snowflake-snowpark-python
+pyarrow
+pandas
+pyspark
+python-dotenv
+jupyterlab

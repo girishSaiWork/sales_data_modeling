@@ -9,13 +9,13 @@ logging.basicConfig(stream=sys.stdout, level=logging.INFO, format='%(asctime)s -
 # Snowpark session
 def get_snowpark_session() -> Session:
     connection_parameters = {
-        "ACCOUNT": "NZNDQDY-MN08301",
-        "USER": "snowpark_user",
-        "PASSWORD": "Test@12$4",
-        "ROLE": "SYSADMIN",
-        "DATABASE": "SNOWFLAKE_SAMPLE_DATA",
-        "SCHEMA": "TPCH_SF1",
-        "WAREHOUSE": "SNOWPARK_ETL_WH"
+        "ACCOUNT": os.getenv("ACCOUNT_ID"),
+        "USER": os.getenv("USER"),
+        "PASSWORD": os.getenv("PASSWORD"),
+        "ROLE": os.getenv("ROLE"),
+        "DATABASE": os.getenv("DATABASE"),
+        "SCHEMA": os.getenv("SCHEMA"),
+        "WAREHOUSE": os.getenv("WAREHOUSE")
     }
     # creating snowflake session object
     snowpark_session = Session.builder.configs(connection_parameters).create()
